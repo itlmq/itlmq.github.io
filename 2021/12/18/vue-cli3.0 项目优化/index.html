@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Vue-cli3.0 项目优化一. 项目优化策略 生成打包报告  第三方库启用 CDN   ui 组件按需加载  路由懒加载  首屏内容定制   二. 项目添加 nprogress 进度条 安装依赖包   1yarn add nprogress -S    在main.js 中导入依赖包和样式   12import NProgress from &amp;#x27;nprogress&amp;#x27; impo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/12/18/vue-cli3.0%20%E9%A1%B9%E7%9B%AE%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue-cli3.0 项目优化一. 项目优化策略 生成打包报告  第三方库启用 CDN   ui 组件按需加载  路由懒加载  首屏内容定制   二. 项目添加 nprogress 进度条 安装依赖包   1yarn add nprogress -S    在main.js 中导入依赖包和样式   12import NProgress from &amp;#x27;nprogress&amp;#x27; impo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-18T01:22:52.494Z">
+<meta property="article:modified_time" content="2021-12-18T01:22:51.646Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-vue-cli3.0 项目优化" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/12/18/vue-cli3.0%20%E9%A1%B9%E7%9B%AE%E4%BC%98%E5%8C%96/" class="article-date">
+  <time class="dt-published" datetime="2021-12-18T01:22:52.494Z" itemprop="datePublished">2021-12-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue-cli3-0-项目优化"><a href="#Vue-cli3-0-项目优化" class="headerlink" title="Vue-cli3.0 项目优化"></a>Vue-cli3.0 项目优化</h1><h2 id="一-项目优化策略"><a href="#一-项目优化策略" class="headerlink" title="一. 项目优化策略"></a>一. 项目优化策略</h2><ol>
+<li><p>生成打包报告</p>
+</li>
+<li><p>第三方库启用 CDN </p>
+</li>
+<li><p>ui 组件按需加载</p>
+</li>
+<li><p>路由懒加载</p>
+</li>
+<li><p>首屏内容定制</p>
+</li>
+</ol>
+<h2 id="二-项目添加-nprogress-进度条"><a href="#二-项目添加-nprogress-进度条" class="headerlink" title="二. 项目添加 nprogress 进度条"></a>二. 项目添加 nprogress 进度条</h2><ol>
+<li>安装依赖包 </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add nprogress -S </span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在main.js 中导入依赖包和样式 </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> NProgress <span class="keyword">from</span> <span class="string">&#x27;nprogress&#x27;</span> </span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;nprogress/nprogress.css&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在axios请求拦截器和响应拦截器中配置启动和结束</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// axios 请求拦截</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</span><br><span class="line">  NProgress.start()</span><br><span class="line">  <span class="keyword">return</span> config</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// axios 响应拦截</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">  NProgress.done()</span><br><span class="line">  <span class="keyword">return</span> response</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-自动移除-console-log"><a href="#三-自动移除-console-log" class="headerlink" title="三. 自动移除 console.log"></a>三. 自动移除 console.log</h2><ol>
+<li>安装依赖包  </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add babel-plugin-transform-remove-console -D </span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在 .babelrc  | babel.config.js 文件中配置 plugins 插件 </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> prodPlugins = []</span><br><span class="line"><span class="comment">// 生产环境移除console</span></span><br><span class="line"><span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>) &#123;</span><br><span class="line">  prodPlugins.push(<span class="string">&#x27;transform-remove-console&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">&#x27;presets&#x27;</span>: [</span><br><span class="line">    <span class="string">&#x27;@vue/app&#x27;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">&#x27;import&#x27;</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">&#x27;libraryName&#x27;</span>: <span class="string">&#x27;vant&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;libraryDirectory&#x27;</span>: <span class="string">&#x27;es&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;style&#x27;</span>: <span class="literal">true</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&#x27;vant&#x27;</span></span><br><span class="line">    ],</span><br><span class="line">    ...prodPlugins</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-生成打包报告"><a href="#四-生成打包报告" class="headerlink" title="四. 生成打包报告"></a>四. 生成打包报告</h2><ol>
+<li>直接在命令行添加参数  </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue-cli-service build --report</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>通过可视化的 ui 面板查看报告（推荐）</li>
+</ol>
+<p>  在可视化的ui面板中，通过<em><strong>控制台</strong></em>和<em><strong>分析</strong></em>面板， 可以方便的查看存在的问题</p>
+<h2 id="五-vue-cli3-0-webpack全局配置-vue-config-js"><a href="#五-vue-cli3-0-webpack全局配置-vue-config-js" class="headerlink" title="五. vue-cli3.0 webpack全局配置 vue.config.js"></a>五. vue-cli3.0 webpack全局配置 vue.config.js</h2><p><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/config">https://cli.vuejs.org/zh/config</a></p>
+<h2 id="六-为开发模式与发布模式设置不同的打包入口"><a href="#六-为开发模式与发布模式设置不同的打包入口" class="headerlink" title="六. 为开发模式与发布模式设置不同的打包入口"></a>六. 为开发模式与发布模式设置不同的打包入口</h2><ol>
+<li><p>配置开发入口文件 src/main-dev.js 和发布模式入口文件 src/main-prod.js</p>
+</li>
+<li><p>通过 configureWebpack 或者 chainWebpack  来修改默认的配置</p>
+</li>
+</ol>
+<p>  configureWebpack 通过对象形式操作</p>
+<p>  chainWebpack        通过链式形式操作</p>
+<ol start="3">
+<li>在 vue.config.js 文件中通过 chainWebpack 修改入口文件  </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">chainWebpack</span>: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 发布模式</span></span><br><span class="line">    config.when(process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">      config</span><br><span class="line">        .entry(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">        .clear()</span><br><span class="line">        .add(<span class="string">&#x27;./src/main-prod.js&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 开发模式</span></span><br><span class="line">    config.when(process.env.NODE_ENV === <span class="string">&#x27;development&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">      config</span><br><span class="line">        .entry(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">        .clear()</span><br><span class="line">        .add(<span class="string">&#x27;./src/main-dev.js&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="七-通过-externals-加载外部-CDN-资源"><a href="#七-通过-externals-加载外部-CDN-资源" class="headerlink" title="七. 通过 externals 加载外部 CDN 资源"></a>七. 通过 externals 加载外部 CDN 资源</h2><ol>
+<li>配置 vue.config.js </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">chainWebpack</span>: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 发布模式</span></span><br><span class="line">  config.when(process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config</span><br><span class="line">      .entry(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">      .clear()</span><br><span class="line">      .add(<span class="string">&#x27;./src/main-prod.js&#x27;</span>)</span><br><span class="line">    config</span><br><span class="line">      .set(<span class="string">&#x27;externals&#x27;</span>, &#123;</span><br><span class="line">       	<span class="attr">vant</span>: <span class="string">&#x27;Vant&#x27;</span></span><br><span class="line">        <span class="attr">vue</span>: <span class="string">&#x27;Vue&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;vue-router&#x27;</span>: <span class="string">&#x27;VueRouter&#x27;</span>,</span><br><span class="line">        <span class="attr">axios</span>: <span class="string">&#x27;axios&#x27;</span>,</span><br><span class="line">        <span class="attr">nprogress</span>: <span class="string">&#x27;NProgress&#x27;</span>,</span><br><span class="line">        <span class="attr">moment</span>: <span class="string">&#x27;moment&#x27;</span></span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 开发模式</span></span><br><span class="line">  config.when(process.env.NODE_ENV === <span class="string">&#x27;development&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config</span><br><span class="line">      .entry(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">      .clear()</span><br><span class="line">      .add(<span class="string">&#x27;./src/main-dev.js&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>在 index.html 文件中引入 CDN服务依赖文件  </p>
+<p><a target="_blank" rel="noopener" href="http://www.staticfile.org/">http://www.staticfile.org/</a></p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nprogress 的样式表文件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- vant 的样式表文件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- nprogress 的 js 文件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- moment 的 js 文件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/moment.js/2.24.0/moment.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- vant 的 js 文件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> ps: vant ui  引入CDN文件之后，可以直接去掉 按需引入</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="八-首页内容定制"><a href="#八-首页内容定制" class="headerlink" title="八. 首页内容定制"></a>八. 首页内容定制</h2><ol>
+<li>配置 vue.config.js </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 发布模式</span></span><br><span class="line">  config.when(process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 配置入口文件</span></span><br><span class="line">    config</span><br><span class="line">      .entry(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">      .clear()</span><br><span class="line">      .add(<span class="string">&#x27;./src/main-prod.js&#x27;</span>)</span><br><span class="line">    <span class="comment">// 配置CDN</span></span><br><span class="line">    config</span><br><span class="line">      .set(<span class="string">&#x27;externals&#x27;</span>, &#123;</span><br><span class="line">      	<span class="attr">vant</span>: <span class="string">&#x27;Vant&#x27;</span></span><br><span class="line">        <span class="attr">vue</span>: <span class="string">&#x27;Vue&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;vue-router&#x27;</span>: <span class="string">&#x27;VueRouter&#x27;</span>,</span><br><span class="line">        <span class="attr">axios</span>: <span class="string">&#x27;axios&#x27;</span>,</span><br><span class="line">        <span class="attr">nprogress</span>: <span class="string">&#x27;NProgress&#x27;</span>,</span><br><span class="line">        <span class="attr">moment</span>: <span class="string">&#x27;moment&#x27;</span></span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="comment">// 配置首页定制</span></span><br><span class="line">    config.plugin(<span class="string">&#x27;html&#x27;</span>).tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">      args[<span class="number">0</span>].isProd = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">return</span> args</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 开发模式</span></span><br><span class="line">  config.when(process.env.NODE_ENV === <span class="string">&#x27;development&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config</span><br><span class="line">      .entry(<span class="string">&#x27;app&#x27;</span>)</span><br><span class="line">      .clear()</span><br><span class="line">      .add(<span class="string">&#x27;./src/main-dev.js&#x27;</span>)</span><br><span class="line">    <span class="comment">// 配置首页定制</span></span><br><span class="line">    config.plugin(<span class="string">&#x27;html&#x27;</span>).tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">      args[<span class="number">0</span>].isProd = <span class="literal">false</span></span><br><span class="line">      <span class="keyword">return</span> args</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在index.html中通过流程控制 是否加载CDN资源</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= htmlWebpackPlugin.options.isProd ? &#x27;&#x27; : &#x27;dev - &#x27; %&gt;mall-vue<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">&lt;% if(htmlWebpackPlugin.options.isProd)&#123; %&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>vue-ssr<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- nprogress 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- vant 的样式表文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- nprogress 的 js 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- moment 的 js 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/moment.js/2.24.0/moment.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- vant 的 js 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&lt;%&#125;%&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="九-实现路由懒加载"><a href="#九-实现路由懒加载" class="headerlink" title="九. 实现路由懒加载"></a>九. 实现路由懒加载</h2><ol>
+<li>安装依赖包  </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add @babel/plugin-syntax-dynamic-import -D </span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>配置 babel.config.js </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="string">&#x27;@babel/plugin-syntax-dynamic-import&#x27;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>按需加载路由组件 </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> About = <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: &quot;about&quot; */</span> <span class="string">&#x27;./views/About.vue&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/18/vue-cli3.0%20%E9%A1%B9%E7%9B%AE%E4%BC%98%E5%8C%96/" data-id="ckxb5tdmz0005b4t786eydb26" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/12/18/git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/18/rem%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/18/%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/18/vue.config.js%E9%85%8D%E7%BD%AE/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/18/json-server%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/18/apidoc%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/18/ECMAScript6/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

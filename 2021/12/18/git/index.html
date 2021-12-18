@@ -6,15 +6,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="npm快速删除node_modules包 首先在全局环境下安装下面这个包:  1npm i rimraf -g   然后输入下面命令就可以快速删除了:  1rimraf node_modules">
+  <meta name="description" content="git  git init 初始化git本地仓库 git status 查看监听的状态  (可选) git add .  全部添加到可操作的状态 （当前状态应该为绿色） git commit -m ‘first’  把监听的文件添加到本地仓库        git log    查看修改日志   (可选) git remote add origin http  http是你的运程仓库地址  需要你">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2021/12/16/npm%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4node_modules%E5%8C%85/index.html">
+<meta property="og:url" content="http://example.com/2021/12/18/git/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="npm快速删除node_modules包 首先在全局环境下安装下面这个包:  1npm i rimraf -g   然后输入下面命令就可以快速删除了:  1rimraf node_modules">
+<meta property="og:description" content="git  git init 初始化git本地仓库 git status 查看监听的状态  (可选) git add .  全部添加到可操作的状态 （当前状态应该为绿色） git commit -m ‘first’  把监听的文件添加到本地仓库        git log    查看修改日志   (可选) git remote add origin http  http是你的运程仓库地址  需要你">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-12-16T12:42:45.393Z">
-<meta property="article:modified_time" content="2021-12-16T12:44:38.479Z">
+<meta property="article:published_time" content="2021-12-18T01:40:32.383Z">
+<meta property="article:modified_time" content="2021-12-07T12:34:00.281Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-npm快速删除node_modules包" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/12/16/npm%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4node_modules%E5%8C%85/" class="article-date">
-  <time class="dt-published" datetime="2021-12-16T12:42:45.393Z" itemprop="datePublished">2021-12-16</time>
+    <a href="/2021/12/18/git/" class="article-date">
+  <time class="dt-published" datetime="2021-12-18T01:40:32.383Z" itemprop="datePublished">2021-12-18</time>
 </a>
     
   </div>
@@ -85,19 +85,44 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="npm快速删除node-modules包"><a href="#npm快速删除node-modules包" class="headerlink" title="npm快速删除node_modules包"></a>npm快速删除node_modules包</h1><ul>
-<li>首先在全局环境下安装下面这个包:</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i rimraf -g</span><br></pre></td></tr></table></figure>
+        <p>git </p>
+<p>git init 初始化git本地仓库</p>
+<p>git status 查看监听的状态  (可选)</p>
+<p>git add .  全部添加到可操作的状态 （当前状态应该为绿色）</p>
+<p>git commit -m ‘first’  把监听的文件添加到本地仓库       </p>
+<p>git log    查看修改日志   (可选)</p>
+<p>git remote add origin http  http是你的运程仓库地址  需要你在 github 或者 码云上创建    </p>
+<p>git push -u origin master  提交到主分支上   </p>
+<p>git branch 分支名称 创建新分支</p>
+<p>git checkout -b 分支的名称  创建并切换到新分支   </p>
+<p>git branch     查看分支  </p>
+<p>git checkout 分支名称   切换分支  </p>
+<p>git push -u origin  分支名称</p>
+<p>git reset –hard commit_id   代码回退  </p>
+<p>合并</p>
+<p>git merge 分支名称      要确保你是在master 分支上操作</p>
+<p>删除</p>
+<p>git branch -d 分支名称 删除本地分支</p>
+<p>git branch -D 分支名称 强制删除本地分支</p>
+<p>git push origin –delete 分支名称 删除远程分支</p>
+<p>重命名</p>
+<p>git branch -m 要改的本地分支名 修改后的分支名(修改本地分支)</p>
+<p>git push origin :远程修改前的分支名（删除远程分支）</p>
+<p>git push origin 修改后的分支名:修改后的分支名（push 到远程分支）</p>
+<p>git branch –set-upstream  修改后的分支名 origin/修改后的分支名（绑定远程分支）</p>
+<p>代码拉取  </p>
+<p>git pull origin master </p>
+<p>强制删除远程分支 </p>
+<p>git push origin –delete 分支名称   </p>
+<p>出现这个问题是因为gitee中的文件不在本地代码目录中，可以通过如下命令进行代码合并,之后在提交<br>代码合并 </p>
+<p>git merge 分支名称     本地合并   </p>
+<p>git push              提交到远程  </p>
+<p>git pull –rebase origin master   同步远程和本地的代码  </p>
 
-<ul>
-<li>然后输入下面命令就可以快速删除了:</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rimraf node_modules</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/16/npm%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4node_modules%E5%8C%85/" data-id="ckx8ygbhi0000hot76j2h21dk" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/18/git/" data-id="ckxb5tdmy0004b4t7hbvtae1b" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -107,7 +132,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/12/18/rem%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/12/18/ECMAScript6/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -117,7 +142,7 @@
     </a>
   
   
-    <a href="/2021/12/16/hexo%E5%8D%9A%E5%AE%A2%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/12/18/vue-cli3.0%20%E9%A1%B9%E7%9B%AE%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
